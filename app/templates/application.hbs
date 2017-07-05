@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>{{t 'myTranslatedString' name=userName}}</h1>
+
+<p>
+  <a onclick={{action 'incrementN'}}>
+    {{t 'intro-sentence' n=n dogs=(t 'dogs' count=n)}}
+  </a>
+</p>
+
+<a onclick={{action 'setLocale' 'en'}}>English</a> |
+<a onclick={{action 'setLocale' 'es'}}>Spanish</a> <br />
+
+<a onclick={{action 'showAlert' 'message'}}>Message</a> |
+<a onclick={{action 'showAlert' 'warning'}}>Warning</a>
+
 
 {{outlet}}
